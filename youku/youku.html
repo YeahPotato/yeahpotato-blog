@@ -1,0 +1,3036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+
+
+
+        //通用函数
+
+        // alert(1)
+		window.onload=function(){
+				var oCicle=document.getElementById('cicle');
+				var oCicleBox=document.getElementById('cicle_box');
+				var oUp=document.getElementById('up');
+				var oUpBox=document.getElementById('up_box');
+
+
+				oCicle.onmouseover=function(){
+					oCicleBox.className='show';
+				};
+				oCicle.onmouseout=function(){
+					oCicleBox.className='hide';
+				};
+				//Cicle结束
+				oUp.onmouseover=function(){
+					oUpBox.className='show';
+				};
+				oUp.onmouseout=function(){
+					oUpBox.className='hide';
+				};
+				//Up结束
+				// login结束
+
+				var oNavBox=document.getElementById('nav_box');
+				var aNavLi=oNavBox.getElementsByTagName('li')
+				// alert(aNavLi.length)
+
+				for (var i = 0; i < aNavLi.length; i++) {
+					aNavLi[i].onmouseover=function(){
+						for (var i = 0; i < aNavLi.length; i++) {
+							aNavLi[i].className='';
+						}
+						this.className='liactive';
+					};
+				}
+				//nav_btn结束
+
+				var oX=document.getElementById('xx');
+				var oB=document.getElementById('banner_box');
+
+				oX.onclick=function(){
+					oB.style.display='none';
+				};
+				//banner
+
+
+                //Pic遮罩开始
+                function Mask(id){
+                	var oLi=document.getElementById(id);
+                	var oMidBox=oLi.getElementsByTagName('div')[0];
+
+                	oLi.onmouseover=function(){
+                		oMidBox.className='middle show';
+                	};
+                	oLi.onmouseout=function(){
+                		oMidBox.className='middle hide';
+                	};
+                };
+
+                Mask('pic2_box');
+                Mask('pic3_box');
+                Mask('pic4_box');
+                Mask('pic5_box');
+                Mask('pic6_box');
+                Mask('pic7_box');
+                Mask('pic8_box');
+                Mask('pic9_box');
+                Mask('pic11_box');
+                Mask('pic13_box');
+                //little遮罩结束
+
+				var oLiBig=document.getElementById('pic1_box');
+				var oBigBox=document.getElementById('big_box');
+				// alert(1)
+				oLiBig.onmouseover=function(){
+					oBigBox.className='show';
+				};
+				oLiBig.onmouseout=function(){
+					oBigBox.className='hide';
+				};
+                //big遮罩结束
+
+
+				//选项卡通用函数
+				function ShowHide(id1,id2){
+				    var aA=document.getElementById(id1).getElementsByTagName('li');
+				    //btn
+
+				    var aB=document.getElementById(id2).getElementsByTagName('ul');
+				    //box
+				    for (var i = 0; i < aA.length; i++) {
+				    	// alert(1)
+				    	aA[i].index=i;
+				        aA[i].onclick=function(){
+				        	for (var i = 0; i < aA.length; i++) {
+					            aA[i].className='fl';
+					            aB[i].className='list_hot clearfix hide';
+				        	}
+					        this.className='btn_active fl';
+					        aB[this.index].className='list_hot clearfix show';
+				        };
+				    }
+				};
+
+
+                ShowHide('tv_btn','tv_box');
+                ShowHide('variety_btn','variety_box');
+                ShowHide('movie_btn','movie_box');	
+                ShowHide('child_btn','child_box');	
+                ShowHide('ent_btn','ent_box');	
+                ShowHide('infor_btn','infor_box');	
+                ShowHide('music_btn','music_box');	
+                ShowHide('crazy_btn','crazy_box');	
+                ShowHide('life_btn','life_box');	
+                ShowHide('travel_btn','travel_box');	
+                ShowHide('car_btn','car_box');	
+
+				// 原创出品 选项卡开始
+
+
+				var oDiv=document.getElementById('ori_box');
+				var aliBtn=oDiv.getElementsByTagName('li')
+				var aUl=document.getElementById('or').getElementsByTagName('ul')
+				// alert(aUl.length)
+				var oUl1=document.getElementById('list_bot_box1');
+				var oUl2=document.getElementById('list_bot_box2');
+				//alert(1)
+
+				for(var i=0;i<aliBtn.length;i++){
+					aliBtn[i].index=i;
+					aliBtn[i].onclick=function(){
+						for (var i = 0; i < aliBtn.length; i++) {
+							aliBtn[i].className='fl';
+							oUl1.style.display='none';
+							oUl2.style.display='none';
+						}
+					this.className='btn_active fl';
+					aUl	[this.index].style.display='block';
+					};
+				};
+
+				//play_icon开始
+
+					function PlayIconShowHide(id3,id4){
+						var oPlayIcon=document.getElementById(id3);
+						var oLiPlay=document.getElementById(id4);
+
+						oLiPlay.onmouseover=function(){
+							oPlayIcon.className='play_icon show';
+						};
+						oLiPlay.onmouseout=function(){
+							oPlayIcon.className='play_icon hide';
+						};
+
+					};
+					PlayIconShowHide('play_box1','play_show_btn1');
+					PlayIconShowHide('play_box2','play_show_btn2');
+					PlayIconShowHide('play_box3','play_show_btn3');
+					PlayIconShowHide('play_box4','play_show_btn4');
+					PlayIconShowHide('play_box5','play_show_btn5');
+					PlayIconShowHide('play_box6','play_show_btn6');
+					PlayIconShowHide('tv_box1','tv_btn1');
+					PlayIconShowHide('tv_box2','tv_btn2');
+					PlayIconShowHide('tv_box3','tv_btn3');
+					PlayIconShowHide('tv_box4','tv_btn4');
+					PlayIconShowHide('tv_box5','tv_btn5');
+					PlayIconShowHide('tv_box6','tv_btn6');
+
+
+/*				var aTvBtn=document.getElementById('tv_btn').getElementsByTagName('li');
+				// alert(aTvBtn.length)
+				var aTvBox=document.getElementById('tv_box').getElementsByTagName('ul');
+ 
+				for (var i = 0; i < aTvBtn.length; i++) {
+					aTvBtn[i].index=i;
+					aTvBtn[i].onclick=function(){
+						for (var i = 0; i < aTvBtn.length; i++) {
+							aTvBtn[i].className='fl';
+							aTvBox[i].style.display='none';
+						}
+						this.className='btn_active fl';
+						aTvBox[this.index].style.display='block';
+					};
+				}
+*/				//tv选项卡
+
+/*
+				function getStyle(obj,Sstyle){
+					var x=0;  
+					if(obj.currentStyle){
+						x=(obj.currentStyle[Sstyle])
+					}else{
+						x=(getComputedStyle(obj,false)[Sstyle])
+					}
+					return x; 
+				};
+					x=getStyle(aTvBtn,'display');
+					y=getStyle(oUl2,'display');
+					alert(x);
+					// alert(y);*/
+					//获取非行间样式
+		};
+	</script>
+</head>
+<body>
+	<div class="warp">
+		<div class="head">
+			<div class="logo clearfix">
+				<h1 class="fl">
+					<a href="#">
+						<img src="img/logo.png" alt="Youku">
+					</a>
+				</h1>
+				<ul class="top_nav clearfix fl">
+					<li><a href="javascript:;">首页</a></li>
+					<li><a href="javascript:;">发现</a></li>
+					<li><a href="javascript:;">订阅</a></li>
+					<li><a href="javascript:;">会员</a></li>
+					<li><a href="javascript:;">我的</a></li>
+				</ul>
+				<div class="login fl clearfix">
+					<a class="fl" href="javascript:;">
+						<i class="user"></i>
+						<span>登录</span>
+					</a>
+					<i id="cicle"  class="cicle fl">
+						<div id="cicle_box" class="hide">
+							<div class="cicle_top">
+								<a href="javascript:;">登录</a>
+								<span>同步各端记录</span>
+							</div>
+							<div class="cicle_bot clearfix">
+								<a class="a_hot fl" href="javascript:;">节目热播列表</a>
+								<a class="a_more fr" href="javascript:;">查看更多</a>
+							</div>
+						</div>
+					</i>
+					<i class="email fl"></i>
+					<i id="up" class="up fl">
+						<div id="up_box" class="hide">
+							<ul class="clearfix">
+								<li class="fl">
+									<img src="img/up_box_icon.png" alt="">
+									<p>上传视频</p>
+								</li>
+								<li class="fl">
+									<img src="img/up_box_icon.png" alt="">
+									<p>上传视频</p>
+								</li>
+								<li class="fl">
+									<img src="img/up_box_icon.png" alt="">
+									<p>上传视频</p>
+								</li>
+								<li class="fl nmr">
+									<img src="img/up_box_icon.png" alt="">
+									<p>上传视频</p>
+								</li>
+							</ul>
+							<div class="up_mid clearfix">
+								<a href="javascript:;">自视频加油站</a>
+								<a href="javascript:;">原创认证</a>
+							</div>
+							<div class="up_bot clearfix">
+								<a class="a_hot fl" href="javascript:;">节目热播列表</a>
+								<a class="a_more fr" href="javascript:;">查看更多</a>
+							</div>
+						</div>
+					</i>
+				</div>
+				<div class="search fl">
+                	<div class="ipt clearfix">
+                    	<i class="so fl"></i>
+                    	<input class="soso" type="text"/>
+                        <input class="btn" type="button" value="搜库"/>
+                    </div>
+                </div>
+			</div>
+			<div class="login_box"></div>
+			<div id="nav_box" class="nav">
+            	<ul class="nav_btn clearfix">
+                	<li class="liactive">首页</li>
+                	<li>电视剧</li>
+                	<li>电影</li>
+                	<li>综艺</li>
+                	<li>音乐</li>
+                	<li>少儿</li>
+                	<li>来疯</li>
+                	<li>直播</li>
+                	<li>片库</li>
+                	<li>咨询</li>
+                	<li>纪实</li>
+                	<li>公益</li>
+                	<li>欧洲杯</li>
+                	<li>汽车</li>
+                	<li>科技</li>
+                	<li>财经</li>
+                	<li>娱乐</li>
+                	<li>原创</li>
+                	<li>动漫</li>
+                	<li>搞笑</li>
+                	<li>旅游</li>
+                	<li>更多</li>
+                	<li id="laste" >下载</li>
+                </ul>
+            </div>
+			<div id="banner_box" class="banner">
+            	<a href="javascript:;">
+                	<img src="img/banner.png" alt="banner"/>
+                </a>
+                <i id="xx"><span>X</span>&nbsp关闭</i>
+            </div>
+            <div class="pic clearfix">
+            	<ul class="pic_left clearfix fl mr">
+                	<li id="pic1_box">
+                		<img src="img/1-1.png" alt=""/>
+                		<div id="big_box" class="hide">
+	                		<div id="big"></div>
+	            			<div class="big_text ">
+	            				<strong><终极一班4>雷婷失忆换性格 女神秒变吃货</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+                	</li>
+                	<li id="pic2_box" class="mr">
+                		<img src="img/1-2.png" alt=""/>
+
+                		<div class="middle hide">
+	                		<div class="mid"></div>
+	            			<div class="mid_text ">
+	            				<strong><云小凡>小蛮助幽冥解干旱</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+
+                	</li>
+                	<li id="pic3_box">
+                		<img src="img/1-2.png" alt=""/>
+                		<div class="middle hide">
+	                		<div class="mid"></div>
+	            			<div class="mid_text ">
+	            				<strong><云小凡>小蛮助幽冥解干旱</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+                	</li>
+                </ul>
+                <ul class="pic_mid mr fl clearfix">
+                	<li id="pic4_box" class="mr">
+                		<img src="img/1-2.png" alt=""/>
+                		<div class="middle hide">
+	                		<div class="mid"></div>
+	            			<div class="mid_text ">
+	            				<strong><云小凡>小蛮助幽冥解干旱</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+                	</li>
+                	<li id="pic5_box">
+                		<img src="img/1-2.png" alt=""/>
+                		<div class="middle hide">
+	                		<div class="mid"></div>
+	            			<div class="mid_text ">
+	            				<strong><云小凡>小蛮助幽冥解干旱</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+                	</li>
+                	<li id="pic6_box" class="mr">
+                		<img src="img/1-2.png" alt=""/>
+                		<div class="middle hide">
+	                		<div class="mid"></div>
+	            			<div class="mid_text ">
+	            				<strong><云小凡>小蛮助幽冥解干旱</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+                	</li>
+                	<li id="pic7_box">
+                		<img src="img/1-2.png" alt=""/>
+                		<div class="middle hide">
+	                		<div class="mid"></div>
+	            			<div class="mid_text ">
+	            				<strong><云小凡>小蛮助幽冥解干旱</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+                	</li>
+                	<li id="pic8_box" class="mr">
+                		<img src="img/1-2.png" alt=""/>
+                		<div class="middle hide">
+	                		<div class="mid"></div>
+	            			<div class="mid_text ">
+	            				<strong><云小凡>小蛮助幽冥解干旱</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+                	</li>
+                	<li id="pic9_box">
+                		<img src="img/1-2.png" alt=""/>
+                		<div class="middle hide">
+	                		<div class="mid"></div>
+	            			<div class="mid_text ">
+	            				<strong><云小凡>小蛮助幽冥解干旱</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+                	</li>
+                </ul>
+                <ul class="pic_right fl clearfix">
+                	<li><img src="img/gg.png" alt="广告"/></li>
+                    <li id="pic11_box" class="mr">
+                    	<img src="img/1-2.png" alt="广告"/>
+                		<div class="middle hide">
+	                		<div class="mid"></div>
+	            			<div class="mid_text ">
+	            				<strong><云小凡>小蛮助幽冥解干旱</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+                    </li>
+	                <li id="pic13_box" class="mr">
+	                	<img src="img/1-2.png" alt="广告"/>
+                		<div class="middle hide">
+	                		<div class="mid"></div>
+	            			<div class="mid_text ">
+	            				<strong><云小凡>小蛮助幽冥解干旱</strong>
+	            				<p>340万次播放&nbsp1,021次评论 </p>
+	            				<a class="play" href="javascript:;">立刻播放</a>
+	            			</div>
+            			</div>
+	                </li>
+                	<li class="nmr li4">
+                		<img src="img/dog.png" alt="广告"/>
+                	</li>
+                </ul>
+            </div>
+            <div class="bg_line"></div>
+		</div>
+		<!-- 头部结束 -->
+		<div class="main clearfix">
+        	<!-- <div class="seven_hot lp">
+        	            	<div class="title clearfix">
+        	                	<i class="diamond fl"></i>
+        	                    <h3 class="fl">7月热门独播&nbsp;&gt;</h3>
+        	                    <i class="little fr"></i>
+        	                </div>
+        	                标题结束
+        	                <ul class="list_hot clearfix">
+        	                	<li class="fl mr">
+        	                    	<img src="img/2-1.png" alt="" />
+        	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+        	                        <b>街头捡废品心酸无人识</b>
+        	                    </li>
+        	                	<li class="fl mr">
+        	                    	<img src="img/2-1.png" alt="" />
+        	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+        	                        <b>街头捡废品心酸无人识</b>
+        	                    </li>
+        	                	<li class="fl mr">
+        	                    	<img src="img/2-1.png" alt="" />
+        	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+        	                        <b>街头捡废品心酸无人识</b>
+        	                    </li>
+        	                	<li class="fl mr">
+        	                    	<img src="img/2-1.png" alt="" />
+        	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+        	                        <b>街头捡废品心酸无人识</b>
+        	                    </li>
+        	                	<li class="fl mr">
+        	                    	<img src="img/2-1.png" alt="" />
+        	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+        	                        <b>街头捡废品心酸无人识</b>
+        	                    </li>
+        	                	<li class="fl ">
+        	                    	<img src="img/2-1.png" alt="" />
+        	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+        	                        <b>街头捡废品心酸无人识</b>
+        	                    </li>
+        	                </ul>
+        	                七月热门独播结束
+        	            </div> -->
+            
+<!--            <div class="bg_line"></div>
+-->            
+<!--         	<div class="seven_hot  lp clearfix">
+                        	<div class="left clearfix fl">
+                                <div class="title clearfix">
+                                    <i class="diamond fl"></i>
+                                    <h3 class="fl">优酷懂你	&nbsp;&gt;</h3>
+                                    <i class="little fr"></i>
+                                </div>
+                                标题结束
+                                <ul class="list_hot clearfix">
+                                    <li class="fl mr">
+                                        <img src="img/2-1.png" alt="" />
+                                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                                        <b>街头捡废品心酸无人识</b>
+                                    </li>
+                                    <li class="fl mr mb">
+                                        <img src="img/2-1.png" alt="" />
+                                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                                        <b>街头捡废品心酸无人识</b>
+                                    </li>
+                                    <li class="fl mr mb">
+                                        <img src="img/2-1.png" alt="" />
+                                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                                        <b>街头捡废品心酸无人识</b>
+                                    </li>
+                                    <li class="fl mr mb">
+                                        <img src="img/2-1.png" alt="" />
+                                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                                        <b>街头捡废品心酸无人识</b>
+                                    </li>
+                                    <li class="fl  mb">
+                                        <img src="img/2-1.png" alt="" />
+                                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                                        <b>街头捡废品心酸无人识</b>
+                                    </li>
+                                    <li class="fl mr">
+                                        <img src="img/2-1.png" alt="" />
+                                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                                        <b>街头捡废品心酸无人识</b>
+                                    </li>
+                                    <li class="fl mr">
+                                        <img src="img/2-1.png" alt="" />
+                                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                                        <b>街头捡废品心酸无人识</b>
+                                    </li>
+                                    <li class="fl mr">
+                                        <img src="img/2-1.png" alt="" />
+                                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                                        <b>街头捡废品心酸无人识</b>
+                                    </li>
+                                    <li class="fl mr">
+                                        <img src="img/2-1.png" alt="" />
+                                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                                        <b>街头捡废品心酸无人识</b>
+                                    </li>
+                                    <li class="fl ">
+                                        <img src="img/2-1.png" alt="" />
+                                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                                        <b>街头捡废品心酸无人识</b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="right fl clearfix">
+                                <div class="things">
+                                    <div class="title clearfix">
+                                        <h3 class="fl">产品大全&nbsp;&gt;</h3>
+                                    </div>
+                                    <ul>
+                                        <li class="clearfix">
+                                            <i class="icon_1 fl"></i>
+                                            <h5 class="fl">来&nbsp;&nbsp;疯</h5>
+                                            <a class="fl hota" href="javascript:;">热门主播</a>
+                                            <a class="fl" href="javascript:;">来疯APP</a>
+                                        </li>
+                                        <li class="clearfix">
+                                            <i class="icon_1 fl"></i>
+                                            <h5 class="fl">来&nbsp;&nbsp;疯</h5>
+                                            <a class="fl hota" href="javascript:;">热门主播</a>
+                                            <a class="fl" href="javascript:;">来疯APP</a>
+                                        </li>
+                                        <li class="clearfix">
+                                            <i class="icon_1 fl"></i>
+                                            <h5 class="fl">来&nbsp;&nbsp;疯</h5>
+                                            <a class="fl hota" href="javascript:;">热门主播</a>
+                                            <a class="fl" href="javascript:;">来疯APP</a>
+                                        </li>
+                                        <li class="clearfix">
+                                            <i class="icon_1 fl"></i>
+                                            <h5 class="fl">来&nbsp;&nbsp;疯</h5>
+                                            <a class="fl hota" href="javascript:;">热门主播</a>
+                                            <a class="fl" href="javascript:;">来疯APP</a>
+                                        </li>
+                                        <li class="clearfix">
+                                            <i class="icon_1 fl"></i>
+                                            <h5 class="fl">来&nbsp;&nbsp;疯</h5>
+                                            <a class="fl hota" href="javascript:;">热门主播</a>
+                                            <a class="fl" href="javascript:;">来疯APP</a>
+                                        </li>
+                                        <li class="clearfix">
+                                            <i class="icon_1 fl"></i>
+                                            <h5 class="fl">来&nbsp;&nbsp;疯</h5>
+                                            <a class="fl hota" href="javascript:;">热门主播</a>
+                                            <a class="fl" href="javascript:;">来疯APP</a>
+                                        </li>
+                                        <li class="clearfix">
+                                            <i class="icon_1 fl"></i>
+                                            <h5 class="fl">来&nbsp;&nbsp;疯</h5>
+                                            <a class="fl hota" href="javascript:;">热门主播</a>
+                                            <a class="fl" href="javascript:;">来疯APP</a>
+                                        </li>
+                                        <li class="clearfix">
+                                            <i class="icon_1 fl"></i>
+                                            <div class="text">
+                                                <h5 class="fl">来&nbsp;&nbsp;疯</h5>
+                                                <a class="fl hota" href="javascript:;">热门主播</a>
+                                                <a class="fl" href="javascript:;">来疯APP</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+             -->            <!--优酷懂你结束-->
+            </div>
+            <div class="ori lp mb ff">
+                <div id="ori_box" class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">原创 · 出品&nbsp;&gt;</h3>
+                    <ul class="clearfix fl">
+                        <li class="btn_active fl ">最佳原创</li>
+                        <li class="fl">优酷出品</li>
+                    </ul>
+                </div>
+                <div id="or">
+	                <ul id="list_bot_box1" class="list_hot clearfix" style="display:block">
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul id="list_bot_box2" class="list_hot clearfix" style="display:none">
+	                	<li class="fl mr">
+	                    	<img src="img/2-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/2-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	            </div>
+            </div>
+            <!--原创出品结束-->
+            
+            <div class="tv mb lp ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">电视剧&nbsp;&gt;</h3>
+
+                    <ul id="tv_btn" class="clearfix fl">
+                        <li class="fl btn_active ">最新</li>
+                        <li class="fl">大陆剧</li>
+                        <li class="fl ">日韩剧</li>
+                        <li class="fl ">英美剧</li>
+                        <li class="fl ">港台剧</li>
+                    </ul>
+
+                </div>
+                <div id="tv_box">
+                	<ul  class="list_hot clearfix show" >
+	                	<li class="fl mr">
+	                    	<img src="img/6-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/6-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/6-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li id="tv_btn1" class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                        <div id="tv_box1" class="play_icon hide">
+	                        	<div class="play_iconbg"></div>
+	                        	<i class="icon_play"></i>
+	                        </div>
+	                    </li>
+	                	<li id="tv_btn2" class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                        <div id="tv_box2" class="play_icon hide">
+	                        	<div class="play_iconbg"></div>
+	                        	<i class="icon_play"></i>
+	                        </div>
+	                    </li>
+	                	<li id="tv_btn3" class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                        <div id="tv_box3" class="play_icon hide">
+	                        	<div class="play_iconbg"></div>
+	                        	<i class="icon_play"></i>
+	                        </div>
+	                    </li>
+	                	<li id="tv_btn4" class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                        <div id="tv_box4" class="play_icon hide">
+	                        	<div class="play_iconbg"></div>
+	                        	<i class="icon_play"></i>
+	                        </div>
+	                    </li>
+	                	<li id="tv_btn5" class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                        <div id="tv_box5" class="play_icon hide">
+	                        	<div class="play_iconbg"></div>
+	                        	<i class="icon_play"></i>
+	                        </div>
+	                    </li>
+	                	<li id="tv_btn6" class="fl">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                        <div id="tv_box6" class="play_icon hide">
+	                        	<div class="play_iconbg"></div>
+	                        	<i class="icon_play"></i>
+	                        </div>
+	                    </li>
+	                </ul>
+	                <ul  class="list_hot clearfix hide" >
+	                	<li class="fl mr">
+	                    	<img src="img/7-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/6-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/6-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+
+	                    </li>
+	                </ul>
+	                <ul  class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/7-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/6-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/6-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul  class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/13-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/6-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/6-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/6-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul  class="list_hot clearfix hide" >
+	                	<li class="fl mr">
+	                    	<img src="img/6-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                
+
+
+	            </div>
+            </div>
+            <!--电视剧结束-->
+            
+        	<div class="play_show lp">
+            	<div class="title clearfix">
+                	<i class="diamond fl"></i>
+                    <h3 class="fl">放剧场&nbsp;&gt;</h3>
+                </div>
+                <!--标题结束-->
+                <ul class="list_hot clearfix">
+                	<li id="play_show_btn1" class="fl mr">
+                    	<img src="img/2-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                        <div id="play_box1" class="play_icon hide">
+                        	<div class="play_iconbg"></div>
+                        	<i class="icon_play"></i>
+                        </div>
+                    </li>
+                	<li id="play_show_btn2" class="fl mr">
+                    	<img src="img/2-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                        <div id="play_box2" class="play_icon hide">
+                        	<div class="play_iconbg"></div>
+                        	<i class="icon_play"></i>
+                        </div>
+                    </li>
+                	<li id="play_show_btn3" class="fl mr">
+                    	<img src="img/2-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                        <div id="play_box3" class="play_icon hide">
+                        	<div class="play_iconbg"></div>
+                        	<i class="icon_play"></i>
+                        </div>
+                    </li>
+                	<li id="play_show_btn4" class="fl mr">
+                    	<img src="img/2-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                        <div id="play_box4" class="play_icon hide">
+                        	<div class="play_iconbg"></div>
+                        	<i class="icon_play"></i>
+                        </div>
+                    </li>
+                	<li id="play_show_btn5" class="fl mr">
+                    	<img src="img/2-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                        <div id="play_box5" class="play_icon hide">
+                        	<div class="play_iconbg"></div>
+                        	<i class="icon_play"></i>
+                        </div>
+                    </li>
+                	<li id="play_show_btn6" class="fl ">
+                    	<img src="img/2-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                        <div id="play_box6" class="play_icon hide">
+                        	<div class="play_iconbg"></div>
+                        	<i class="icon_play"></i>
+                        </div>
+                    </li>
+                </ul>
+                <!--放剧场结束-->
+            </div>
+            
+            <div class="variety mb lp ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">综艺&nbsp;&gt;</h3>
+                    <ul id="variety_btn" class="clearfix fl">
+                        <li class="btn_active fl">热播综艺</li>
+                        <li class="fl ">大陆综艺</li>
+                        <li class="fl ">海外综艺</li>
+                        <li class="fl ">自制综艺</li>
+                    </ul>
+                </div>
+                <div id="variety_box">
+	                <ul class="list_hot clearfix show">
+	                	<li class="fl mr">
+	                    	<img src="img/7-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/13-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/7-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/2-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/7-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/7-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/7-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/7-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/7-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/7-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/6-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/7-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/7-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/7-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/7-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/7-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/7-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/7-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/7-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/7-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/7-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/7-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/7-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/7-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/7-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/7-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/7-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/7-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+                </div>
+            </div>
+            <!--综艺结束-->
+
+            <div class="movie lp mb ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">电影&nbsp;&gt;</h3>
+                    <ul id="movie_btn" class="clearfix fl">
+                        <li class="btn_active fl">最近</li>
+                        <li class="fl ">壹影院</li>
+                        <li class="fl">好莱坞</li>
+                        <li class="fl">预告片</li>
+                        <li class="fl">微影院</li>
+                    </ul>
+                </div>
+                <div id="movie_box">
+	                <ul class="list_hot clearfix show">
+						<li class="fl mb mr">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr ">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+						<li class="fl mb mr">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr ">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/8-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+						<li class="fl mb mr">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr ">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/8-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+						<li class="fl mb mr">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr ">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/8-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+						<li class="fl mb mr">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb mr ">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  mr ">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/8-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	            </div>
+            </div>
+            <!--电影结束-->
+            <div class="cart lp mb ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">动漫&nbsp;&gt;</h3>
+                </div>
+                <ul class="list_hot clearfix">
+                	<li class="fl mr">
+                    	<img src="img/9-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/9-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/9-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/9-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/9-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl">
+                    	<img src="img/9-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                </ul>
+            </div>
+            <!--动漫结束-->
+            <div class="child lp mb ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">少儿&nbsp;&gt;</h3>
+                    <ul id="child_btn" class="clearfix fl">
+                        <li class="btn_active fl">小小优酷APP</li>
+                        <li class="fl ">宝狄学英文</li>
+                        <li class="fl ">奇妙故事会</li>
+                    </ul>
+                </div>
+                <div id="child_box">
+	                <ul class="list_hot clearfix show">
+	                	<li class="fl mr">
+	                    	<img src="img/10-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl">
+	                    	<img src="img/10-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+					<ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/10-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl">
+	                    	<img src="img/10-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/10-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/10-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/10-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>            
+                </div>
+            </div>
+            <!--少儿结束-->
+            <div class="theme lp mb ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">专题精选&nbsp;&gt;</h3>
+                </div>
+                <ul class="list_hot clearfix">
+                	<li class="fl mr">
+                    	<img src="img/11-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/11-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/11-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/11-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/11-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl">
+                    	<img src="img/11-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                </ul>
+            </div>
+
+            <!--专题精选结束-->
+            <div class="self lp mb ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">自频道精选&nbsp;&gt;</h3>
+                </div>
+                <ul class="list_hot clearfix">
+                	<li class="fl mr">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl mr">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                	<li class="fl ">
+                    	<img src="img/12-1.png" alt="" />
+                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+                        <b>街头捡废品心酸无人识</b>
+                    </li>
+                </ul>
+            </div>
+            <!--自频道精选结束-->
+            <div class="ent mb lp ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">娱乐&nbsp;&gt;</h3>
+                    <ul id="ent_btn" class="clearfix fl">
+                        <li class="btn_active fl">娱乐资讯</li>
+                        <li class="fl">电视资讯</li>
+                        <li class="fl">电影资讯</li>
+                    </ul>
+                </div>
+                <div id="ent_box">
+	                <ul class="list_hot clearfix show">
+	                	<li class="fl mr">
+	                    	<img src="img/13-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/13-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/13-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/13-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/13-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/13-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/13-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/13-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/13-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/6-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/13-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/13-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/13-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/13-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/13-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/13-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/13-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/13-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/7-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/13-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/13-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr mb">
+	                    	<img src="img/13-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mb">
+	                    	<img src="img/13-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/13-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/13-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/13-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl ">
+	                    	<img src="img/13-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+               </div>
+            </div>
+            <!--娱乐结束-->
+            <div class="infor mb lp ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">资讯&nbsp;&gt;</h3>
+                    <ul id="infor_btn" class="clearfix fl">
+                        <li class="fl">资讯</li>
+                        <li class="fl btn_active ">拍客</li>
+                        <li class="fl">军事</li>
+                    </ul>
+                </div>
+                <div id="infor_box">
+	                <ul class="list_hot clearfix show">
+	                	<li class="fl mr">
+	                    	<img src="img/14-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/14-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/14-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/14-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/14-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/14-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/14-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/14-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/14-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/14-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/14-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/14-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/14-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/14-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/14-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/14-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/14-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/14-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	            </div>
+            </div>
+            <!--资讯结束-->
+            <div class="music mb lp ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">音乐&nbsp;&gt;</h3>
+                    <ul id="music_btn" class="clearfix fl">
+                        <li class="fl btn_active">日荐</li>
+                        <li class="fl">玩年</li>
+                        <li class="fl">初放送</li>
+                        <li class="fl">话语音乐</li>
+                        <li class="fl">日韩音乐</li>
+                        <li class="fl">欧美音乐</li>
+                    </ul>
+                </div>
+                <div id="music_box">
+	                <ul class="list_hot clearfix show">
+	                	<li class="fl mr">
+	                    	<img src="img/15-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/15-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/15-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/15-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/15-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/15-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/15-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/15-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/15-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/15-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/15-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/15-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/15-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/15-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/15-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/15-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/15-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/15-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/15-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+                </div>
+            </div>
+            <!--音乐结束-->
+            <div class="crazy mb lp ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">来疯直播&nbsp;&gt;</h3>
+                    <ul id="crazy_btn" class="clearfix fl">
+                        <li class="fl btn_active ">推荐</li>
+                        <li class="fl">甜心派</li>
+                        <li class="fl">好声音</li>
+                        <li class="fl">劲舞趴</li>
+                        <li class="fl">才艺咖</li>
+                        <li class="fl">男人帮</li>
+                        <li class="fl">脱口秀</li>
+                        <li class="fl">最新星</li>
+                    </ul>
+                </div>
+                <div id="crazy_box">
+	                <ul class="list_hot clearfix show">
+	                	<li class="fl mr">
+	                    	<img src="img/16-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/16-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/16-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/16-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/16-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/16-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/16-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/16-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/16-3.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/16-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/16-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/16-4.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/16-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/16-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/16-5.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/16-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/16-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/16-6.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/16-7.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-7.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-7.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-7.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/16-7.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/16-7.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/16-8.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-8.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-8.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/16-8.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/16-8.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/16-8.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+                </div>
+            </div>
+            <!--来疯直播结束-->
+          <div class="life mb lp ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">生活·时尚&nbsp;&gt;</h3>
+                    <ul id="life_btn" class="clearfix fl">
+                        <li class="fl btn_active ">生活方式</li>
+                        <li class="fl">品味时尚</li>
+                    </ul>
+                </div>
+                <div id="life_box">
+	                <ul class="list_hot clearfix show">
+	                	<li class="fl mr">
+	                    	<img src="img/17-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/17-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/17-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/17-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/17-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/17-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+               		<ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/17-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/17-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/17-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/17-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/17-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/17-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+                </div>
+            </div>
+            <!--生活时尚结束-->
+          <div class="travel mb lp ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">旅游·亲子&nbsp;&gt;</h3>
+                    <ul id="travel_btn" class="clearfix fl">
+                        <li class="fl btn_active">旅游户外</li>
+                        <li class="fl">亲子萌宝</li>
+                    </ul>
+                </div>
+                <div id="travel_box">
+	                <ul class="list_hot clearfix show">
+	                	<li class="fl mr">
+	                    	<img src="img/18-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/18-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/18-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/18-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/18-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/18-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>	                
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/18-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/18-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/18-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/18-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/18-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/18-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+                </div>
+            </div>
+            <!--旅游结束-->
+          <div class="car mb lp ff">
+                <div class="title ff clearfix">
+                    <i class="diamond fl"></i>
+                    <h3 class="fl">汽车·科技&nbsp;&gt;</h3>
+                    <ul id="car_btn" class="clearfix fl">
+                        <li class="fl btn_actives">汽车资讯</li>
+                        <li class="fl">科技聚焦</li>
+                    </ul>
+                </div>
+                <div id="car_box">
+	                <ul class="list_hot clearfix show">
+	                	<li class="fl mr">
+	                    	<img src="img/19-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/19-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/19-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/19-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/19-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/19-1.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+	                <ul class="list_hot clearfix hide">
+	                	<li class="fl mr">
+	                    	<img src="img/19-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/19-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/19-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr">
+	                    	<img src="img/19-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl mr ">
+	                    	<img src="img/19-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                	<li class="fl  ">
+	                    	<img src="img/19-2.png" alt="" />
+	                        <h4><极挑>颜王脚软摔倒被扶泪崩</h4>
+	                        <b>街头捡废品心酸无人识</b>
+	                    </li>
+	                </ul>
+                </div>
+            </div>
+            <!--汽车结束-->
+          </div>
+          <div class="totop">
+		        <div class="mation">返回顶部</div>
+          		<a href="#"></a>
+          </div>
+		<!-- 内容结束 -->
+		<div class="foot">
+        	<img src="img/footImg.png" alt=""/>
+        </div>
+	<!-- 页脚结束 -->
+	</div>
+</body>
+</html>

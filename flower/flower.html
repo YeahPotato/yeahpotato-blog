@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>花瓣网</title>
+	<style type="text/css">
+		*{margin: 0; padding: 0; list-style: none;}
+		body:after{content: ""; display: block; clear: both;}
+		ul{width: 200px; float: left;border: 1px solid #ccc; margin: 10px;}
+		li{width: 180px; margin:20px 10px; background: #f5f5f5;}
+		img{width: 180px; cursor: pointer;}
+		p{font:12px "微软雅黑";}
+		.title{ width: 160px; padding: 12px 10px; overflow: hidden;  background: #fff; border-bottom: 1px solid #ccc;}
+		.icon{width: 22px; float: left; margin-right: 20px;}
+		a{ color:pink; text-decoration: none; }
+		.bg{width: 100%; height: 560px; background: url(img/bg.png) no-repeat;}
+
+	</style>
+	<script>
+		var arr1=[
+			{
+				src:'img/1.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时光——关注婚礼的一切，分享最美好的时光。#迎宾牌##婚礼布置#迎宾牌森系创意。来自：婚礼时光——关注婚礼的一切，分享最美好的时光。#迎宾牌##婚礼布置#迎宾牌森系创意。来自：婚礼时光——关注婚礼的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/2.jpg',
+				title:'迎宾牌森系迎宾牌森系迎宾牌森系创意。森系迎宾牌森系迎宾牌森系创意。森系迎宾牌森系迎宾牌森系创意。森系迎宾牌森系迎宾牌森系创意。来自：婚礼时光——关注婚礼的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/3.jpg',
+				title:'迎宾牌森系创意。来自：婚礼系创意。来自：婚礼系创意。来自：婚礼时光——关注婚礼的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/4.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时光——关注婚礼的一切，分享最美好的时光。#迎s##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/5.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时光——关注婚礼的一切，牌森系创意。来自：婚礼时光——关注婚礼的一切，牌森系创意。来自：婚礼时光——关注婚礼的一切，分享最美光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/6.jpg',
+				title:'迎宾牌森系创意。来自牌森系创意。来自牌森系创意。来自牌森系创意。来自：婚礼时光——关注婚的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/7.jpg',
+				title:'迎宾牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美好的时光。#迎宾牌##婚礼布置牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美好的时光。#迎宾牌##婚礼布置牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美好的时光。#迎宾牌##婚礼布置牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美宾牌森系创意。来自：婚一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好系创意。来自：婚礼时的一切，分享最美好系创意。来自：婚礼时的一切，分享最美好系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#.创意。来自：婚礼时的一切，分享最美好系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#.创意。来自：婚礼时的一切，分享最美好系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/9.jpg',
+				title:'迎宾牌森系创意。来自：婚礼切，分享最美好的时光。##婚礼布置享最美好的时光。##婚礼布置享最美好的时光。##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好宾牌森系创意。来自：婚礼时的一切，分享最美好宾牌森系创意。来自：婚礼时的一切，分享最美好宾牌森系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好意。来自：婚礼时的一切，分享最美好意。来自：婚礼时的一切，分享最美好意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			},
+			{
+				src:'img/8.jpg',
+				title:'迎宾牌森系创意。来自：婚礼时的一切，分享最美好的时光。#迎宾牌##婚礼布置#...',
+				icon:'img/icon.png',
+				p:'婚礼时光 采集到',
+				p2:'婚礼布置'
+			}//这个
+		];
+				window.onscroll=window.onload=function(){
+					var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+					var clientTop=document.documentElement.clientHeight;
+					var H=document.body.offsetHeight;
+					var aUl=document.getElementsByTagName('ul');
+					//创建li
+					if (clientTop+scrollTop>=H-200) {
+						for (var i = 0; i < 20; i++) {
+							var oLi=document.createElement('li');
+							//判断每个ul的高度，每次都往最短的ul里添加li
+							var arr=[];
+							oLi.innerHTML='<img src="'+arr1[i].src+'" alt=" "/>';
+							var oP=document.createElement('p');
+							oP.innerHTML=arr1[i].title;
+							oLi.appendChild(oP);
+							var oDiv=document.createElement('div');
+							oDiv.className='title';
+							oDiv.innerHTML='<img class="icon" src="'+arr1[i].icon+'"><p><a href="javascript:;">'+arr1[i].p+'</a></p><p>'+arr1[i].p2+'</p>';
+							oLi.appendChild(oDiv);
+							for (var j = 0; j < aUl.length; j++) {
+								arr.push(aUl[j]);
+							}
+							arr.sort(function(n1,n2){
+								return n1.offsetHeight-n2.offsetHeight;
+							})
+							arr[0].appendChild(oLi);
+						}
+					}
+				};
+				
+					//当网页滚动的时候，继续生成li
+
+	</script>
+</head>
+<body>
+<div class="bg"></div>
+	<ul></ul>
+	<ul></ul>
+	<ul></ul>
+	<ul></ul>
+	<ul></ul>
+	<ul>
+	</ul>
+</body>
+</html>

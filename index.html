@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+   	<link type="text/css" rel="stylesheet" href="css/me.css"/>
+	<script src="js/jquery-1.6.2.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="js/rainyday.js"></script>
+	<script type="text/javascript">
+	function run() {
+		var image = document.getElementById('background');
+		image.onload = function() {
+			var engine = new RainyDay({
+			image: this
+		});
+		engine.rain([ [0, 2, 200], [3, 3, 1] ], 100);
+		};
+		image.crossOrigin = 'anonymous';
+		image.src = 'http://i.imgur.com/OVQkDRE.jpg';
+	}
+	</script>
+<title>me</title>
+</head>
+<body onload="run()" style="background: #333;">
+<img style="width:100%; height: 100%; z-index: 10;" id="background" alt="img" src=""/>
+<div id="mainwrap">
+	<div id="cardstyle">
+		<div id="menuwrap">
+			<ul id="iconmenu">
+				<li><a href="#start" title="Start"><img src="img/icons/start.gif" alt="Start" /></a></li>
+				<li><a href="#bio" title="Bio"><img src="img/icons/bio.gif" alt="Bio" /></a></li>
+				<li><a href="#custom" title="Custom"><img src="img/icons/chat.gif" alt="Custom" /></a></li>
+				<li><a href="#contact" title="Contact"><img src="img/icons/contact.gif" alt="Contact" /></a></li>
+				<li><a href="blog.html" title="Social links">进入主页</a></li>
+			</ul>
+		</div>
+
+		<div id="content">
+			<div id="pagecontainer">
+				<ul>
+					<li id="start" class="section">
+						<img src="img/name.png" alt="name">
+						<p class="tagline">web前端</p>
+					</li>
+
+					<li id="bio" class="section">
+						<h2>About Me</h2>
+						<img class="left" src="img/me.png" alt="me" />
+						<p class="text">对，有点逗逼，这就是我。</p>
+						<p class="text">我的年龄我也不是很确定，大概23。</p>
+						<p class="text">个人爱好：看电影，听歌，写写小东西。</p>
+						<p class="text">婚否：选择这个行业就没想过这么早结婚。</p>
+						<p class="text">理想：让自己变成父母吹牛逼的资本。</p>
+					</li>
+
+					<li id="custom" class="section">
+						<h2>Skile</h2>
+						<p class="text">-努力了才有幸运可言。</p>
+						<p class="text"> 本人精通HTML、DIV+CSS、JavaScript等，对Web标准、可用性、可访问性有着深刻的理解，firefox、google、IE8各大主流浏览器的兼容差异。熟悉项目开发使用的各种框架（jQuery，bootstrap，angular，seajs，swiper，hammer，isscroll等）。</p>
+						<p class="text">对个人的职业规划有着清楚的认识，web前端工程师 - web前端架构师-高级web前端工程师。学习是永无止境的，coding开始从未结束，希望贵公司能给我一个学习与进步的机会。</p>
+					</li>
+		
+					<li id="contact" class="section">
+						<h2>Contact</h2>
+						<div id="address">
+							<h3>杨文典</h3>
+							<p>上海市徐汇区龙吴路</p>
+							Mobile: +86 13886277040<br />
+							E-mail: <a href="javascript:;">13886277040@163.com</a>
+							</p>
+						</div>
+						<div id="map">
+							<img alt="Sample map" src="img/map.png" />           
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		© 2016&middot; <a href="javascript:;">design</a> by <a href="javascript:;">potato</a>
+	</div>
+</div>
+</body>
+</html>
